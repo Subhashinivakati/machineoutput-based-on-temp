@@ -20,15 +20,15 @@ model = make_pipeline(
     LinearRegression()
 )
 model.fit(X, y)
-# 5. Display dataset  
-with st.expander("📊 View Training Dataset"): 
-st.dataframe(
-    { 
-        "Temperature": X.flatten(),
-        "Machine_Output": y 
-    },
-    use_container_width=True 
-)
+# 5. Display dataset
+with st.expander("📊 View Training Dataset"):
+    st.dataframe(
+        { 
+            "Temperature": X.flatten(),
+            "Machine_Output": y
+        },
+        use_container_width=True
+    )
 # Take input from the user
 st.subheader("🌡️ Enter Machine Temperature")
 
