@@ -27,6 +27,7 @@ max_value=40.0,
 value=30.0, 
 step=1.0
 )
+Temperature = st.number_input("Enter the Temperature value:", value=0.0)
 # Predict when the button is click
 if st.button("Predict Machine Output", use_container_width=True):
     # Prepare input data
