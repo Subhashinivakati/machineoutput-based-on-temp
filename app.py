@@ -12,11 +12,23 @@ st.title(
 st.write("Predict machine output based on temperature "
 "using Polynomial Regression."
 )
-
-# Load the saved ML model
-with open("machineoutput_model.pkl", "rb") as file:
-    model = pickle.load(file)
-
+X = np.array([ [10], [15], [20], [25], [30], [35], [40] ])
+y = np.array([ 36, 64, 84, 96, 100, 96, 84 ])
+# 4. Create and train the ML model
+model = make_pipeline(
+    PolynomialFeatures(degree=2),
+    LinearRegression()
+)
+model.fit(X, y)
+# 5. Display dataset  
+with st.expander("📊 View Training Dataset"): 
+st.dataframe(
+    { 
+        "Temperature": X.flatten(),
+        "Machine_Output": y 
+    },
+    use_container_width=True 
+)
 # Take input from the user
 st.subheader("🌡️ Enter Machine Temperature")
 
