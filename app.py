@@ -14,7 +14,7 @@ st.write("Predict machine output based on temperature "
 )
 
 # Load the saved ML model
-with open("machineoutput_model(1).pkl", "rb") as file:
+with open("machineoutput_model.pkl", "rb") as file:
     model = pickle.load(file)
 
 # Take input from the user
