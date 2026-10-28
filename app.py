@@ -30,7 +30,7 @@ step=1.0
 # Predict when the button is click
 if st.button("Predict Machine Output", use_container_width=True):
     # Prepare input data
-    input_data = np.array([[temperature]])
+    input_data = np.array([[X]])
     prediction = model.predict(input_data)[0]
     st.success("Prediction completed successfully!")
     predicted_marks = max(0.0, min(100.0, prediction))
