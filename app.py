@@ -47,7 +47,6 @@ if st.button("Predict Machine Output", use_container_width=True):
     # Prepare input data
     input_data = np.array([[temperature]])
     prediction = model.predict(input_data)[0]
-    st.success("Prediction completed successfully!")
     predicted_output = max(0.0, min(100.0, prediction))
     st.write(f"🌡️ Temperature: {temperature:.1f}")
     st.write( f"⚙️ Predicted Machine Output: {predicted_output:.2f}")
