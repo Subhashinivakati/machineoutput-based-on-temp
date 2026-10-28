@@ -49,14 +49,14 @@ if st.button("Predict Machine Output", use_container_width=True):
     prediction = model.predict(input_data)[0]
     st.success("Prediction completed successfully!")
     predicted_output = max(0.0, min(100.0, prediction))
+    st.write(f"🌡️ Temperature: {temperature:.1f}")
+    st.write( f"⚙️ Predicted Machine Output: {predicted_output:.2f}")
     #Display prediction results
     st.success("Prediction Completed!")
     st.metric(
         label="⚙️ Predicted Machine Output", 
         value=f"{predicted_output:.2f} / 100"
     )
-    st.write(f"🌡️ Temperature: {temperature:.1f}")
-    st.write( f"⚙️ Predicted Machine Output: {predicted_output:.2f}")
     # Display performance message
     if predicted_output >= 90: 
         st.info("Excellent machine output! 🌟")
