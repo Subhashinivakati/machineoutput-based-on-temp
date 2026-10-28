@@ -49,7 +49,7 @@ if st.button("Predict Machine Output", use_container_width=True):
     input_data = np.array([[Temperature]])
     prediction = model.predict(input_data)[0]
     st.success("Prediction completed successfully!")
-    predicted_marks = max(0.0, min(100.0, prediction))
+    predicted_output = max(0.0, min(100.0, prediction))
     #Display prediction results
     st.success("Prediction Completed!")
     st.metric(
