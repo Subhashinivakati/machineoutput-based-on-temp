@@ -42,11 +42,10 @@ max_value=40.0,
 value=30.0, 
 step=1.0
 )
-Temperature = st.number_input("Enter the Temperature value:", value=0.0)
 # Predict when the button is click
 if st.button("Predict Machine Output", use_container_width=True):
     # Prepare input data
-    input_data = np.array([[Temperature]])
+    input_data = np.array([[temperature]])
     prediction = model.predict(input_data)[0]
     st.success("Prediction completed successfully!")
     predicted_output = max(0.0, min(100.0, prediction))
