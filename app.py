@@ -1,6 +1,9 @@
 import pickle
 import streamlit as st
 import numpy as np
+from sklearn.pipeline import make_pipeline 
+from sklearn.preprocessing import PolynomialFeatures 
+from sklearn.linear_model import LinearRegression
 # Set up the web page
 st.set_page_config(
 page_title="Machine Output Predictor",
